@@ -36,6 +36,10 @@ export default {
   }),
   methods: {
     ...mapActions(['toggleSideMenu', 'setLoginUser'])
+    openSideMenu () {
+      this.$store.dispatch('toggleSideMenu')
+    },
+    ...mapActions(['toggleSideMenu'])
   }
 };
 </script>
