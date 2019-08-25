@@ -4,11 +4,11 @@
     <v-list class="pa-1">
       <v-list-item avatar>
         <v-list-item-avatar>
-          <img src="https://avatars0.githubusercontent.com/u/46399968?v=4">
+          <img v-if="photoURL" :src="photoURL">
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>Reona Shimada</v-list-item-title>
+          <v-list-item-title>{{ userName }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -39,6 +40,9 @@ export default {
         { title: '連絡先一覧', icon: 'list', link: { name: 'addresses' } }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['userName', 'photoURL'])
   }
 }
 </script>
