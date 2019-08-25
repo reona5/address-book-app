@@ -17,7 +17,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  components: {
+  methods: {
     ...mapActions(['login'])
   },
 };
